@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terms of Service for Neon — Lightweight Multi-Server Discord CTF Bot">
+  <title>Neon — Terms of Service</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --page-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --card-border-hover: #7dd3fc;
+      --brand-blue: #0284c7;
+      --brand-blue-hover: #0369a1;
+      --brand-cyan: #00b4d8;
+      --brand-cyan-glow: rgba(0, 180, 216, 0.2);
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #64748b;
+      --callout-bg: #f0f9ff;
+      --callout-border: #0284c7;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      line-height: 1.7;
+      padding: 2.5rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    a {
+      color: var(--brand-blue);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease, text-decoration 0.15s ease;
+    }
+
+    a:hover, a:focus-visible {
+      color: var(--brand-blue-hover);
+      text-decoration: underline;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 820px;
+    }
+
+    /* Header */
+    header {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(2, 132, 199, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--brand-cyan), var(--brand-blue));
+    }
+
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 2px solid #bae6fd;
+      background: #060b15;
+      box-shadow: 0 0 16px var(--brand-cyan-glow);
+      flex-shrink: 0;
+    }
+
+    .brand-fallback {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      background: #f0f9ff;
+      border: 2px solid #bae6fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--brand-blue);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      background: #e0f2fe;
+      color: var(--brand-blue);
+      border: 1px solid #bae6fd;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .date-label {
+      font-size: 0.875rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    /* Table of contents */
+    .toc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .toc-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-blue);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .toc-title::before {
+      content: "§";
+      color: var(--brand-cyan);
+      font-size: 1.1rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.5rem 1.5rem;
+    }
+
+    .toc-list li a {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .toc-list li a:hover {
+      color: var(--brand-blue);
+    }
+
+    .toc-list li a span.sec-num {
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
+
+    /* Main article sections */
+    main {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 2.75rem 2.25rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1.5px solid #f1f5f9;
+    }
+
+    h2 span.sec-num {
+      color: var(--brand-blue);
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: #334155;
+      margin-bottom: 0.95rem;
+      font-size: 0.975rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+      font-size: 0.975rem;
+    }
+
+    /* Callout box */
+    .callout {
+      background: var(--callout-bg);
+      border: 1px solid #bae6fd;
+      border-left: 4px solid var(--brand-blue);
+      border-radius: 8px;
+      padding: 1.15rem 1.35rem;
+      margin: 1.25rem 0;
+      color: #0c4a6e;
+      font-size: 0.95rem;
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.05);
+    }
+
+    .callout strong {
+      color: #0369a1;
+      font-weight: 700;
+    }
+
+    /* Contact box */
+    .contact-card {
+      background: #f8fafc;
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--brand-blue);
+      border-radius: 8px;
+      padding: 1.35rem;
+      margin-top: 0.85rem;
+    }
+
+    .contact-card p {
+      margin-bottom: 0.35rem;
+      color: #0f172a;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 2.75rem;
+      text-align: center;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-dim);
+      font-size: 0.875rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.925rem;
+    }
+
+    .footer-nav a {
+      color: var(--brand-blue);
+      font-weight: 600;
+    }
+
+    .footer-nav a:hover {
+      color: var(--brand-blue-hover);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.25rem 0.75rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+
+      main {
+        padding: 1.75rem 1.25rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="Neon-logo.png" alt="Neon Logo" class="brand-logo" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='flex';">
+      <div id="fallback-logo" class="brand-fallback" style="display: none;">⚡</div>
+      <div class="header-text">
+        <span class="badge">Open-Source CTF Bot</span>
+        <h1>Terms of Service</h1>
+        <div class="date-label">Last updated: October 18, 2026</div>
+      </div>
+    </header>
+
+    <nav class="toc-card" aria-label="Table of contents">
+      <div class="toc-title">Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#about-neon"><span class="sec-num">1.</span> About Neon</a></li>
+        <li><a href="#using-neon"><span class="sec-num">2.</span> Using Neon</a></li>
+        <li><a href="#challenges-submissions"><span class="sec-num">3.</span> CTF Challenges &amp; Submissions</a></li>
+        <li><a href="#open-source"><span class="sec-num">4.</span> Open-Source Software</a></li>
+        <li><a href="#self-hosting"><span class="sec-num">5.</span> Self-Hosting &amp; Responsibilities</a></li>
+        <li><a href="#availability"><span class="sec-num">6.</span> Availability &amp; Changes</a></li>
+        <li><a href="#disclaimer"><span class="sec-num">7.</span> Disclaimer &amp; Liability</a></li>
+        <li><a href="#policy-changes"><span class="sec-num">8.</span> Changes to These Terms</a></li>
+        <li><a href="#contact"><span class="sec-num">9.</span> Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about-neon">
+        <h2><span class="sec-num">1.</span> About Neon</h2>
+        <p>Neon is an open-source Discord bot designed to help communities run Capture The Flag (CTF) challenges, manage submissions, record winners, and display leaderboards.</p>
+        <p>I am the independent developer of Neon. I provide the bot's source code for others to inspect, modify, and self-host. I do not operate a publicly hosted bot service as part of this project.</p>
+      </section>
+
+      <section id="using-neon">
+        <h2><span class="sec-num">2.</span> Using Neon</h2>
+        <p>By using Neon in a Discord server, you agree to use it responsibly and follow Discord's Terms of Service, Community Guidelines, and applicable laws.</p>
+        <p>You must not use Neon to facilitate illegal activities, harass other users, abuse Discord, or disrupt other communities.</p>
+        <p>Server administrators are responsible for configuring and operating their own Neon instances appropriately.</p>
+      </section>
+
+      <section id="challenges-submissions">
+        <h2><span class="sec-num">3.</span> CTF Challenges and Submissions</h2>
+        <p>Neon supports challenge creation, flag submissions, winner recording, scoring, and leaderboards.</p>
+        
+        <div class="callout">
+          <strong>Notice on Public Flag Submissions:</strong> Depending on the server's configuration, flag submissions may be posted in a public Discord channel. By submitting a flag, you understand that the submitted content may be visible to other members who can access that channel.
+        </div>
+
+        <p>Challenge authors or authorized administrators are responsible for manually reviewing submissions and determining winners. Neon does not automatically verify whether a submitted flag is correct.</p>
+        <p>Points and rankings depend on the challenge configuration and the actions of authorized administrators. Users should not attempt to manipulate submissions, timestamps, scoring, or winner records.</p>
+      </section>
+
+      <section id="open-source">
+        <h2><span class="sec-num">4.</span> Open-Source Software</h2>
+        <p>Neon is provided as open-source software. Your rights to use, modify, and redistribute its source code are governed by the project's applicable open-source license (MIT License).</p>
+        <p>Unless expressly stated in that license, Neon is provided without a guarantee that it will meet every user's requirements.</p>
+      </section>
+
+      <section id="self-hosting">
+        <h2><span class="sec-num">5.</span> Self-Hosting and Responsibilities</h2>
+        <p>Anyone operating their own Neon instance is responsible for its hosting environment, database, bot token, encryption or signing secrets, access permissions, backups, updates, and security.</p>
+        <p>I do not control independently operated instances and cannot guarantee their availability, security, or handling of data.</p>
+      </section>
+
+      <section id="availability">
+        <h2><span class="sec-num">6.</span> Availability and Changes</h2>
+        <p>I may update, change, or discontinue development of Neon at any time. I do not guarantee uninterrupted operation, ongoing maintenance, or individual support.</p>
+      </section>
+
+      <section id="disclaimer">
+        <h2><span class="sec-num">7.</span> Disclaimer and Liability</h2>
+        <p>To the extent permitted by applicable law, Neon is provided on an "as is" and "as available" basis, without warranties of any kind.</p>
+        <p>To the extent permitted by applicable law, I am not responsible for losses or damages arising from the use of Neon, its configuration, or independently operated instances. Nothing in these terms excludes liability that cannot legally be excluded.</p>
+      </section>
+
+      <section id="policy-changes">
+        <h2><span class="sec-num">8.</span> Changes to These Terms</h2>
+        <p>I may update these terms when Neon or its usage changes. The latest version will be published at this site/URL.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="sec-num">9.</span> Contact</h2>
+        <p>For questions about Neon or these terms, contact:</p>
+        <div class="contact-card">
+          <p><strong>Developer:</strong> Z3R0-8YT3</p>
+          <p><strong>Email:</strong> <a href="mailto:jeevaadhithyan007@gmail.com">jeevaadhithyan007@gmail.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <nav class="footer-nav" aria-label="Legal document links">
+        <a href="terms.html">Terms of Service</a>
+        <span>•</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <p>© 2026 Neon CTF Bot Project • Open-Source CTF Challenge Platform</p>
+    </footer>
+  </div>
+</body>
+</html>

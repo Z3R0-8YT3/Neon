@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal and compliance documentation for the Neon Discord CTF Bot">
+    <title>Neon — Legal & Compliance Hub</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --brand-blue: #0284c7;
+            --brand-blue-hover: #0369a1;
+            --brand-cyan: #00b4d8;
+            --brand-cyan-glow: rgba(0, 180, 216, 0.2);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #64748b;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            line-height: 1.7;
+            padding: 3rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 88px;
+            height: 88px;
+            border-radius: 18px;
+            border: 2px solid #bae6fd;
+            background: #060b15;
+            box-shadow: 0 0 20px var(--brand-cyan-glow);
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            text-align: left;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 1.75rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-cyan), var(--brand-blue));
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #bae6fd;
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.1);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.35rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .card-link {
+            margin-top: auto;
+            padding-top: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--brand-blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        footer {
+            margin-top: 3.5rem;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="Neon-logo.png" alt="Neon Logo" class="logo">
+        <h1>Neon Legal &amp; Policies</h1>
+        <p class="subtitle">Official legal, privacy, and compliance documentation for the Neon Discord CTF Bot.</p>
+
+        <div class="grid">
+            <a href="terms.html" class="card">
+                <div class="card-icon">📜</div>
+                <h2>Terms of Service</h2>
+                <p>Guidelines for using Neon, challenge submissions, acceptable use, and self-hosting responsibilities.
+                </p>
+                <span class="card-link">Read Terms →</span>
+            </a>
+
+            <a href="privacy.html" class="card">
+                <div class="card-icon">🛡️</div>
+                <h2>Privacy Policy</h2>
+                <p>Details on data handling, Discord message visibility, flag hashing, and participant privacy.</p>
+                <span class="card-link">Read Privacy Policy →</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 Neon CTF Bot Project • Developed by Z3R0-8YT3</p>
+        </footer>
+    </div>
+</body>
+
+</html>
